@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CheckInternetConnectionContineuslyAndroid</string>
+    <string name="network_error">Not Connected</string>
+    <string name="internet_check">Check Internet Connection</string>
+</resources>
