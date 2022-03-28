@@ -2,22 +2,33 @@ package com.example.checkinternetconnectioncontineuslyandroid
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.checkinternetconnectioncontineuslyandroid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val layoutInflater = findViewById<View>(R.id.networkError)
+
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
         val networkConnection = NetworkConnection(applicationContext)
         networkConnection.observe(this) { isConnected ->
             if (isConnected) {
-                Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show()
-                layoutInflater.visibility = View.GONE
+                binding.networkConnected.hView.visibility = View.VISIBLE
+                binding.networkError.hView.visibility = View.GONE
+
             } else {
-                Toast.makeText(this, "Not Connected", Toast.LENGTH_SHORT).show()
-                layoutInflater.visibility = View.VISIBLE
+
+                binding.networkConnected.hView.visibility = View.GONE
+                binding.networkError.hView.visibility = View.VISIBLE
+
             }
 
         }

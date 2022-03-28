@@ -5,10 +5,22 @@
     android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical">
+
+
     <include
         android:id="@+id/networkError"
-        android:visibility="gone"
         layout="@layout/network_error"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+
+    <include
+        android:id="@+id/networkConnected"
+        layout="@layout/connected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+
 </LinearLayout>

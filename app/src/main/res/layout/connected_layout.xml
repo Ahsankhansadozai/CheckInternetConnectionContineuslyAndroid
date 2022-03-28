@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_red"
+        app:srcCompat="@drawable/ic_green_wifi"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -24,17 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="@string/network_error"
+        android:text="@string/connected"
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/errorImageView" />
 
-    <TextView
-        android:id="@+id/errormsgTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="@string/internet_check"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/errorTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
